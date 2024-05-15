@@ -1,0 +1,8 @@
+name = ('Sergey')
+print(name)
+age = (47)
+print(age)
+age = (age +1)
+print (age)
+is_student = (47<48)
+print(is_student)
