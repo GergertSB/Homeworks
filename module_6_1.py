@@ -8,41 +8,46 @@
 
 class Animal:
     def __init__(self, name):
-        self.alive = True
-        self.fed = False
+        self.alive = True # живой или не живой
+        self.fed = False # голодный или сытый
         self.name = name
+
+
+    def eat(self, food): # Результат поедания чего ли-бо
+        if food.edible:
+            print(f"{self.name} съел {food.name}")
+            self.fed = True
+        else:
+            print(f"{self.name} не стал есть {food.name}")
+            self.alive = False
 
 class Plant:
     def __init__(self, name):
-        self.edible = False
         self.name = name
+        self.edible = False  # съедобное или не съедобное
+
 
 # Определение классов-наследников для Animal
 class Mammal(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    def __init__(self, name):
+        self.name = name
+        super().__init__(name)
 
 class Predator(Animal):
-    def eat(self, food):
-        if food.edible:
-            print(f"{self.name} съел {food.name}")
-            self.fed = True
-        else:
-            print(f"{self.name} не стал есть {food.name}")
-            self.alive = False
+    def __init__(self, name):
+        self.name = name
+        super().__init__(name)
+
 
 # Определение классов-наследников для Plant
 class Flower(Plant):
-    pass
+    def __init__(self, name):
+        self.name = name
+        self.edible = False
 
 class Fruit(Plant):
     def __init__(self, name):
-        super().__init__(name)
+        self.name = name
         self.edible = True
 
 # Создание объектов
@@ -61,3 +66,5 @@ a1.eat(p1)
 a2.eat(p2)
 print(a1.alive)
 print(a2.fed)
+
+# Что произошло: Хищник попытался съесть цветок и погиб, млекопитающее съело фрукт и насытилось.
