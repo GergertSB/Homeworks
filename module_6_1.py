@@ -7,9 +7,10 @@
 """
 
 class Animal:
+    alive = True  # живой или не живой
+    fed = False  # голодный или сытый
+
     def __init__(self, name):
-        self.alive = True # живой или не живой
-        self.fed = False # голодный или сытый
         self.name = name
 
 
@@ -30,24 +31,22 @@ class Plant:
 # Определение классов-наследников для Animal
 class Mammal(Animal):
     def __init__(self, name):
-        self.name = name
         super().__init__(name)
 
 class Predator(Animal):
     def __init__(self, name):
-        self.name = name
         super().__init__(name)
 
 
 # Определение классов-наследников для Plant
 class Flower(Plant):
     def __init__(self, name):
-        self.name = name
+        super().__init__(name)
         self.edible = False
 
 class Fruit(Plant):
     def __init__(self, name):
-        self.name = name
+        super().__init__(name)
         self.edible = True
 
 # Создание объектов
