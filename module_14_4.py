@@ -37,7 +37,7 @@ from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMar
 from crud_functions import get_all_products
 import sqlite3
 
-api = '7621125905:AAG0rb5BgNiiun_0spH5-SBegUZqbs7DgeU'
+api = ''
 bot = Bot(token=api)
 dp = Dispatcher(bot, storage=MemoryStorage())
 
