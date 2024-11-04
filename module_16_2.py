@@ -24,16 +24,3 @@ async def welcome(username: Annotated[str, Path(min_length=3, max_length=15, des
                   age: int = Path(ge=0, le=100, description=' Введите свой возраст', example=' 24')) -> dict:
     return {'User': username, 'Age': age}
 
-
-# ------------------------------
-# @app.get('/user{username}/{id}')
-# async def news(username: str = Path(min_length=3, max_length=15, description=' Введите Ваше имя', example=' Иван')
-#                , id: int = Path(ge=0, le=100, description=' Введите свой id', example=' 75')) -> dict:
-#     return {'message': f'Здравствуйте, {username} {id}'}
-#
-#
-#
-# @app.get('/user{username}/{id}')
-# async def news(username: Annotated[str, Path(min_length=3, max_length=15, description=' Введите Ваше имя', example=' Иван')]
-#                , id: int ) -> dict:
-#     return {'message': f'Здравствуйте, {username} {id}'}
